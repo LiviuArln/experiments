@@ -1,0 +1,29 @@
+buildscript {
+	dependencies {
+  	classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+  }
+	repositories {
+		maven { 
+			url "http://repo.spring.io/release"
+		}
+		mavenCentral()
+	}
+}
+
+repositories {
+	maven { 
+		url "http://repo.spring.io/release"
+	}
+	mavenCentral()
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-web'
+}
+
+bootRepackage {
+    mainClass = 'org.rau.exp.Application'
+}
